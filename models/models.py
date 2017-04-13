@@ -47,10 +47,11 @@ class EbMergeIssues(models.TransientModel):
         #also write the description of the destination issue because it will be overwritten
         desc.append(self.dst_issue_id.description)
         for id in self.issue_ids:
-            for name in id:
-            # append the names and desc to the empty lists
-                names.append(name.name)
-                desc.append(name.description)
+            if id.id != self.dst_issue_id.id:
+                for name in id:
+                # append the names and desc to the empty lists
+                        names.append(name.name)
+                        desc.zappend(name.description)
                 #self.issue_ids.write({'message_ids' : self.dst_issue_id.message_ids})
         #transfering the messages from issue_ids to dst_issue_id
         for message in self.issue_ids:

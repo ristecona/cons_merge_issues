@@ -18,7 +18,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','project','project_issue', 'project_issue_sheet'],
+    'depends': ['base','project','project_issue', 'project_issue_sheet',],
 
     # always loaded
     'data': [
